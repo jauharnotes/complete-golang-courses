@@ -1,2 +1,54 @@
 # complete-golang-courses
 Learn Golang from basic to advanced
+
+#Basic
+- Program Hello World
+- Tipe Data number
+- Tipe Data Boolean
+- Tipe Data String
+- Variable
+- Conctan
+- Konversi Tipe Data
+- Type Declarations
+- Operasi Matematika
+- Operasi Perbandingan
+- Operasi Boolean
+- Tipe Data Array
+- Tipe Data Slice
+- Tipe Data Map
+- If Expression
+- For Loop
+- Break Dan Continue
+- Function
+- Function Parameter
+- Function Return Value
+- Variadic Function
+- Function Value
+- Function as parameter
+- Anonymous Function
+- Recursive Function
+- Clousure
+- Defer, Panic & REcover
+- Komentar
+- Struct
+- Interfacec
+- Nill
+- Error Interface
+- Type Assertions
+- Pointer
+- Pointer in Function
+- Pointer in Method
+- GOPATH
+- Package and Import
+- Acces Modifier
+- Package Initilizaton
+- Package os
+- Package flag
+- Package strings
+- Package stconv
+- package math
+- Package container list
+- Package container ring
+- Package sort
+- Package time
+- Package regexp
