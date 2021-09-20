@@ -28,4 +28,10 @@ func main(){
 
 	fmt.Println(lastName)
 	fmt.Println(firstName)
+
+	// Deklarasi multi Variable
+	var first, secon, third string
+	first, secon, third = "one", "two", "three"
+
+	fmt.Println(first, secon, third)
 }
