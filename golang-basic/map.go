@@ -27,4 +27,25 @@ func main() {
 
 	fmt.Println(book)
 	fmt.Println(len(book))
+
+	// iterasi item map menggunakan for range
+	var printXerox = map[string]int{
+		"art carton": 6500,
+		"linen": 7000,
+		"akasia": 7500,
+	}
+
+	for key,val := range printXerox {
+		fmt.Println(key, ":", val)
+	}
+
+	// Deteksi Keberadaan Item Dengan Key Tertentu
+	var fotocopy = map[string]int{"hvs a4": 300, "bookpaper": 350}
+	var value, isExits = fotocopy["bookpaper"]
+
+	if isExits {
+		fmt.Println(value)
+	} else {
+		fmt.Println("item is not exists")
+	}
 }
