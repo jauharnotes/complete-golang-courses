@@ -48,4 +48,15 @@ func main() {
 	} else {
 		fmt.Println("item is not exists")
 	}
+
+	// kombinasi slice & map
+	var chickens = []map[string]string{
+		{"name": "chicken blue", "gender": "male"},
+		{"name": "chicken red", "gender": "male"},
+		{"name": "chicken yellow", "gender": "female"},
+	}
+
+	for _,value := range chickens{
+		fmt.Println(value["gender"], value["name"])
+	}
 }
