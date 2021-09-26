@@ -17,22 +17,22 @@ fmt.Println("numberB (value)   :", *numberB) // 4
 fmt.Println("numberB (address) :", numberB)  // 0xc20800a220
 
 // effect perubahan pointer
-var numberA int = 4
-var numberB *int = &numberA
+var numA int = 4
+var numB *int = &numberA
 
-fmt.Println("numberA (value)   :", numberA)
-fmt.Println("numberA (address) :", &numberA)
-fmt.Println("numberB (value)   :", *numberB)
-fmt.Println("numberB (address) :", numberB)
+fmt.Println("numberA (value)   :", numA)
+fmt.Println("numberA (address) :", &numA)
+fmt.Println("numberB (value)   :", *numB)
+fmt.Println("numberB (address) :", numB)
 
 fmt.Println("")
 
 numberA = 5
 
-fmt.Println("numberA (value)   :", numberA)
-fmt.Println("numberA (address) :", &numberA)
-fmt.Println("numberB (value)   :", *numberB)
-fmt.Println("numberB (address) :", numberB)
+fmt.Println("numberA (value)   :", numA)
+fmt.Println("numberA (address) :", &numA)
+fmt.Println("numberB (value)   :", *numB)
+fmt.Println("numberB (address) :", numB)
 
 //parameter pointer
 var number = 4
