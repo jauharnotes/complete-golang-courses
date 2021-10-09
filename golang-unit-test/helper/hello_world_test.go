@@ -102,3 +102,54 @@ func TestHelloWorld2(t *testing.T) {
 		fmt.Println("TestHelloWorld2 done")
 	}
 }
+
+// benchmarks
+func BenchmarkHelloWorld(b *testing.B) {
+	for i := 0; i <b.N; i++ {
+		HelloWorld("johar")
+	}
+}
+
+func BenchmarkHelloWorldJohar(b *testing.B) {
+	for i := 0; i <b.N; i++ {
+		HelloWorld("joharuddin")
+	}
+}
+
+// sub benchmarks
+func BenchmarkSub(b *testing.B) {
+	b.Run("johar", func(b *testing.B) {
+		for i := 0; i <b.N; i++ {
+			HelloWorld("johar")
+		}
+	})
+	b.Run("joharuddin", func(b *testing.B) {
+		for i := 0; i <b.N; i++ {
+			HelloWorld("joharuddin")
+		}
+	})
+}
+
+// benchmarks table
+func BenchmarkHelloWorldTable(b *testing.B) {
+	benchmarks := []struct{
+		name string
+		request string
+	}{
+		{
+			name: "HelloWorld(johar)",
+			request: "johar",
+		},
+		{
+			name: "HelloWorld(juned)",
+			request: "juned",
+		},
+	}
+	for _,benchmark := range benchmarks {
+		b.Run(benchmark.name, func(b *testing.B) {
+			for i := 0; i < b.N; i++ {
+				HelloWorld(benchmark.request)
+			}
+		})
+	}
+}
