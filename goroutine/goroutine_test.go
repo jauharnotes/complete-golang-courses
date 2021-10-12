@@ -28,3 +28,35 @@ func TestManyGoroutines(t *testing.T) {
 
 	time.Sleep(5*time.Second)
 }
+
+// channel
+func TestCreateChannel(t *testing.T) {
+	channel := make(chan string)
+	defer close(channel)
+
+	go func() {
+		time.Sleep(2*time.Second)
+		channel <- "Jauharuddin"
+		fmt.Println("Selesai Mengirim Data ke Channel")
+	}()
+
+	data := <-channel
+	fmt.Println(data)
+
+	time.Sleep(5*time.Second)
+}
+
+func GivMeResponse(channel chan string) {
+	time.Sleep(2*time.Second)
+	channel <- "Jauharuddin"
+}
+
+func TestChannelParameters(t *testing.T) {
+	channel := make(chan string)
+	defer close(channel)
+
+	go GivMeResponse(channel)
+
+	data := <-channel
+	fmt.Println(data)
+}
