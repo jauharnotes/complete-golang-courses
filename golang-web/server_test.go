@@ -1,6 +1,7 @@
 package golang_web
 
 import (
+	"fmt"
 	"net/http"
 	"testing"
 )
@@ -17,7 +18,7 @@ func TestServer(t *testing.T) {
 }
 
 
-func TestServer(t *testing.T) {
+func TestServer2(t *testing.T) {
 	//var handler http.HandlerFunc = func(writer http.ResponseWriter, request *http.Request) {
 	//	fmt.Fprintf(writer,"Test Server")
 	//}
@@ -25,11 +26,11 @@ func TestServer(t *testing.T) {
 	mux.HandleFunc("/", func(writer http.ResponseWriter, request *http.Request) {
 		fmt.Fprint(writer,"Home")
 	})
-	mux.HandleFunc("/server1", func(writer http.ResponseWriter, request *http.Request) {
-		fmt.Fprint(writer,"Server1")
+	mux.HandleFunc("/image", func(writer http.ResponseWriter, request *http.Request) {
+		fmt.Fprint(writer,"image")
 	})
-	mux.HandleFunc("/server2", func(writer http.ResponseWriter, request *http.Request) {
-		fmt.Fprint(writer,"Server2")
+	mux.HandleFunc("/image/thumnail", func(writer http.ResponseWriter, request *http.Request) {
+		fmt.Fprint(writer,"thumnail")
 	})
 	server := http.Server{
 		Addr: "localhost:8080",
@@ -38,6 +39,22 @@ func TestServer(t *testing.T) {
 
 	err := server.ListenAndServe()
 	if err != nil {
+		panic(err)
+	}
+}
+
+func TestServerRequest(t *testing.T) {
+	var handler http.HandlerFunc = func(writer http.ResponseWriter, request *http.Request) {
+		fmt.Fprintln(writer, request.Method)
+		fmt.Fprintln(writer, request.RequestURI)
+	}
+	server := http.Server{
+		Addr: "localhost:8080",
+		Handler: handler,
+	}
+
+	err := server.ListenAndServe()
+	if err != nil{
 		panic(err)
 	}
 }
